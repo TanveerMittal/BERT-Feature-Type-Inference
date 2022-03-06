@@ -2,7 +2,6 @@ import torch
 from sklearn.model_selection import train_test_split
 
 from process_data import *
-from models.transformer_cnn import *
 from evaluation import evaluate
 
 repo = "TanveerMittal/BERT-Feature_Type_Inference"
