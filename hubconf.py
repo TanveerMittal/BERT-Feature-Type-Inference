@@ -4,8 +4,8 @@ import os
 import torch
 from transformers import AutoModel
 
-model_urls = {"BERT_fti_with_stats": "https://drive.google.com/file/d/1V5Y1Sg54YWVjnYRu47Mv2YO1YD0rwOs2/view?usp=sharing",
-              "BERT_fti_no_stats": "https://drive.google.com/file/d/1nM737i1Vr9N4DYAI8rdWmSvR1mrIyWRc/view?usp=sharing"}
+model_urls = {"with stats": "https://drive.google.com/uc?export=download&id=1V5Y1Sg54YWVjnYRu47Mv2YO1YD0rwOs2",
+              "no stats": "https://drive.google.com/uc?export=download&id=1nM737i1Vr9N4DYAI8rdWmSvR1mrIyWRc"}
 
 def load_statedict_from_online(name):
     torchhome = torch.hub._get_torch_home()
@@ -16,6 +16,7 @@ def load_statedict_from_online(name):
     if not os.path.exists(filepath):
         torch.hub.download_url_to_file(model_urls[name], filepath, hash_prefix=None, progress=True)
     return torch.load(filepath)
+
 
 def BERT_fti_with_stats(pretrained=True, **kwargs):
     # load pretrained bert_model
