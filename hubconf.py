@@ -3,8 +3,8 @@ from models import *
 import torch
 from transformers import AutoModel
 
-model_urls = {"with stats": "https://drive.google.com/file/d/1V5Y1Sg54YWVjnYRu47Mv2YO1YD0rwOs2/view?usp=sharing",
-              "no stats": "https://drive.google.com/file/d/1nM737i1Vr9N4DYAI8rdWmSvR1mrIyWRc/view?usp=sharing"}
+model_urls = {"with stats": "https://drive.google.com/uc?export=download&id=1V5Y1Sg54YWVjnYRu47Mv2YO1YD0rwOs2",
+              "no stats": "https://drive.google.com/uc?export=download&id=1nM737i1Vr9N4DYAI8rdWmSvR1mrIyWRc"}
 
 def BERT_fti_with_stats(pretrained=True, **kwargs):
     # load pretrained bert_model
