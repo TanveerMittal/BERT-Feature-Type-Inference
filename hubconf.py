@@ -1,10 +1,21 @@
-dependencies = ['torch', 'transformers']
+dependencies = ['torch', 'transformers', 'os']
 from models import *
+import os
 import torch
 from transformers import AutoModel
 
-model_urls = {"with stats": "https://drive.google.com/file/d/1V5Y1Sg54YWVjnYRu47Mv2YO1YD0rwOs2/view?usp=sharing",
-              "no stats": "https://drive.google.com/file/d/1nM737i1Vr9N4DYAI8rdWmSvR1mrIyWRc/view?usp=sharing"}
+model_urls = {"BERT_fti_with_stats": "https://drive.google.com/file/d/1V5Y1Sg54YWVjnYRu47Mv2YO1YD0rwOs2/view?usp=sharing",
+              "BERT_fti_no_stats": "https://drive.google.com/file/d/1nM737i1Vr9N4DYAI8rdWmSvR1mrIyWRc/view?usp=sharing"}
+
+def load_statedict_from_online(name):
+    torchhome = torch.hub._get_torch_home()
+    home = os.path.join(torchhome, "weights")
+    if not os.path.exists(home):
+        os.makedirs(home)
+    filepath = os.path.join(home, "%s.pt" % name)
+    if not os.path.exists(filepath):
+        torch.hub.download_url_to_file(model_urls[name], filepath, hash_prefix=None, progress=True)
+    return torch.load(filepath)
 
 def BERT_fti_with_stats(pretrained=True, **kwargs):
     # load pretrained bert_model
@@ -19,7 +30,7 @@ def BERT_fti_with_stats(pretrained=True, **kwargs):
 
     # load pretrained cnn weights
     if pretrained:
-        model.load_state_dict(torch.hub.load_state_dict_from_url(model_urls["with stats"]), progress=True)
+        model.load_state_dict(load_statedict_from_online("BERT_fti_with_stats"))
 
     return model
 
@@ -36,6 +47,6 @@ def BERT_fti_no_stats(pretrained=True, **kwargs):
 
     # load pretrained cnn weights
     if pretrained:
-        model.load_state_dict(torch.hub.load_state_dict_from_url(model_urls["no stats"]), progress=True)
+        model.load_state_dict(load_statedict_from_online("BERT_fti_no_stats"))
 
     return model
