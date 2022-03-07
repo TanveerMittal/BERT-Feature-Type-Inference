@@ -27,7 +27,7 @@ class transformer_cnn_no_stats(nn.Module):
         self.relu =  nn.ReLU()
 
         # dense layer 1
-        self.fc1 = nn.Linear(len(Ks) * Co + 19, 9)
+        self.fc1 = nn.Linear(len(Ks) * Co, 9)
         
         #softmax activation function
         self.softmax = nn.LogSoftmax(dim=1)
