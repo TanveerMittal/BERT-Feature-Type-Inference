@@ -78,11 +78,9 @@ The descriptive statistics the model uses are listed below:
 ### Transformer Model Architecture
 As a part of our capstone we ran many experiments to find the optimal CNN architecture for this task. The diagram below shows how our models work.
 
-<center>
-
-![Diagram](https://github.com/TanveerMittal/BERT-Feature-Type-Inference/blob/main/img/Best%20Model.png?raw=True)
-
-</center>
+<p align="center">
+<img  src="https://github.com/TanveerMittal/BERT-Feature-Type-Inference/blob/main/img/Best%20Model.png?raw=True">
+</p>
 
 Full documentation of our model can be found in our [tech report](https://tanveermittal.github.io/capstone/).
 
