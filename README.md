@@ -5,12 +5,13 @@ This repository contains the release of 2 BERT CNN models for Feature Type Infer
 This work was completed as a part of Project SortingHat out of the [ADA lab](https://adalabucsd.github.io/index.html) at UCSD with the mentorship of Professor Arun Kumar. 
 
 ## References:
+------------------
 - [Model Training and Experiment Code](https://github.com/TanveerMittal/Feature_Type_Inference_Capstone)
 - [ML Data Prep Zoo](https://github.com/pvn25/ML-Data-Prep-Zoo)
 - [Project Sortinghat](https://adalabucsd.github.io/sortinghat.html)
 
 ## Quick Start:
-
+------------------
 ### Loading models from Torch Hub
 To import the models from torch hub, user's only need the [HuggingFace Transformers Library](https://huggingface.co/) and [PyTorch](https://pytorch.org/get-started/locally/) installed.
 
@@ -35,6 +36,7 @@ In the benchmark folder, I have provided code for benchmarking our 2 released mo
 As of now, I have put together code for an end to end pipline for Feature Type Inference on new data. Thankfully, a lot of work has already been done in this area by Project SortingHat. Please refer to the [SortingHat library](https://github.com/pvn25/ML-Data-Prep-Zoo/tree/master/MLFeatureTypeInference/Library) to preprocess new data for inference.
 
 ## Background:
+------------------
 The first step for AutoML software is to identify the feature types of individual columns in input data. This information then allows the software to understand the data and then preprocess it to allow machine learning algorithms to run on it. Project Sortinghat frames this task of Feature Type Inference as a machine learning multiclass classification problem. As an extension of Project SortingHat, I worked on applying transformer models to produce state of the art performance on this task. Our models currently outperform all existing tools currently benchmarked against SortingHat's ML Data Prep Zoo.
 
 ### Label Vocabulary
@@ -76,7 +78,11 @@ The descriptive statistics the model uses are listed below:
 ### Transformer Model Architecture
 As a part of our capstone we ran many experiments to find the optimal CNN architecture for this task. The diagram below shows how our models work.
 
-![Diagram](img/Best Model.png)
+<center>
+
+![Diagram](https://github.com/TanveerMittal/BERT-Feature-Type-Inference/blob/main/img/Best%20Model.png?raw=True)
+
+</center>
 
 Full documentation of our model can be found in our [tech report](https://tanveermittal.github.io/capstone/).
 
