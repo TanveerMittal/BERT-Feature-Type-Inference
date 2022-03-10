@@ -9,6 +9,18 @@ else:
     device = torch.device("cpu")
 
 def evaluate(model, dataloader, cross_entropy, labels, stats=True):
+    """
+    Evaluates transformer CNN model on given data
+
+    Args:
+        model: Pytorch model object
+        dataloader: PyTorch dataloader object
+        cross_entropy: PyTorch loss function object
+        labels: array of labels for given data
+        stats: boolean indicating if model uses descriptive statistics
+    Returns:
+        The average loss, predictions, and accuracy computed on given data
+    """
   
     print("\nEvaluating...")
 

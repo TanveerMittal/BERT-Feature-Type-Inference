@@ -1,10 +1,10 @@
 # BERT for Feature Type Inference
 
-This repository contains the release of 2 BERT CNN models for Feature Type Inference produced by senior data science capstone at UC San Diego. This source code contains torch hub entrypoints to allow for anyone to easily use our models as well as code to benchmark these models against the ML Data Prep Zoo benchmark data.
+This repository contains the release of 2 BERT CNN models for Feature Type Inference produced by my senior data science capstone at UC San Diego. This source code contains torch hub entrypoints to allow for anyone to easily use our models as well as code to benchmark these models against the ML Data Prep Zoo benchmark data.
 
 This work was completed as a part of Project SortingHat out of the [ADA lab](https://adalabucsd.github.io/index.html) at UCSD with the mentorship of Professor Arun Kumar. 
 
-## References:
+## Resources:
 ------------------
 - [Model Training and Experiment Code](https://github.com/TanveerMittal/Feature_Type_Inference_Capstone)
 - [ML Data Prep Zoo](https://github.com/pvn25/ML-Data-Prep-Zoo)
@@ -28,6 +28,7 @@ model = torch.hub.load(repo, 'BERT_fti_no_stats', pretrained=True)
 ### Benchmark
 In the benchmark folder, I have provided code for benchmarking our 2 released models in `run.py`. There is documented code for preprocessing the benchmark data in `process_data.py` and model prediction in `evaluation.py`.
 
+Steps to benchmark the models:
 1. Clone the repo and cd into the benchmark folder
 2. `pip install -r requirements.txt`
 3. `python run.py`
@@ -76,17 +77,17 @@ The descriptive statistics the model uses are listed below:
 | Pandas timestamp check on 5 sample values                                |
 
 ### Transformer Model Architecture
-As a part of our capstone we ran many experiments to find the optimal CNN architecture for this task. The diagram below shows how our models work.
+As a part of our capstone I ran many experiments to find the optimal CNN architecture for this task. The diagram below shows the optimal architecture I found.
 
 <p align="center">
 <img  src="https://github.com/TanveerMittal/BERT-Feature-Type-Inference/blob/main/img/Best%20Model.png?raw=True">
 </p>
 
-Full documentation of our model can be found in our [tech report](https://tanveermittal.github.io/capstone/).
+Full documentation of my model and experiments can be found in our [tech report](https://tanveermittal.github.io/capstone/).
 
 We released 2 models in this repository; one uses all 3 sets of features, the other uses just the column name and sample values and doesn't have a concatenation operation for the statistics.
 
-The results of our models can be seen below:
+The results of the models can be seen below:
 
 - BERT CNN with Descriptive Statistics:
     - 9 Class Test Accuracy: **0.934**
