@@ -17,7 +17,7 @@ To import the models from torch hub, user's only need the [HuggingFace Transform
 
 ```
 # Name of this repo
-repo = "TanveerMittal/BERT-Feature_Type_Inference"
+repo = "TanveerMittal/BERT-Feature-Type-Inference"
 
 # Load bert model using stats
 model = torch.hub.load(repo, 'BERT_fti_with_stats', pretrained=True)
